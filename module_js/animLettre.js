@@ -17,13 +17,13 @@ export class AnimLettre {
     constructor(o, elementParent, fonction) {
         //Récupérer les valeurs passées en paramètre			
         this.lesLettres = o.lesLettres;
-        this.elmParent = elementParent
-        this.anim_lettres(lesLettres)
-        this.fonction = fonction
+        this.elmParent = elementParent;
+        this.anim_lettres(this.lesLettres);
+        this.fonction = fonction;
     }
 
 
-    anim_lettres() {
+    anim_lettres(lesLettres) {
         /* Création des élément DOM qui seront animés. 
         Les éléments seront intégré dans le conteneur elmParent
         */
@@ -33,7 +33,7 @@ export class AnimLettre {
             '',
             'mot')
 
-            for (let uneLettre of motNoel) {
+            for (let uneLettre of lesLettres) {
                 uneLettre.classList.add("animationLettre");
                 uneLettre.style.color = tabCouleur[i++]
             }
