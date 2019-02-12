@@ -27,6 +27,7 @@ export class AnimLettre {
         /* Création des élément DOM qui seront animés. 
         Les éléments seront intégré dans le conteneur elmParent
         */
+        const tabCouleur = ['#CC231E', '#235E6F' , '#009900', '#34A65F', '#0F8A5F','#F5624D']
         console.log('introduction')
         let elmConteneur = this.creerElement(this.elmParent,
             'section',
@@ -37,6 +38,7 @@ export class AnimLettre {
                 let elmLettre = this.creerElement(elmConteneur, 'div', uneLettre, "mot")
                 elmLettre.style.animationDelay = (i * 0.5) + "s";
                 i++;
+                elmLettre.style.color = tabCouleur[(i++)%7]
             }
         /* On garde une référence sur la fonction terminerIntro */
         let refTerminerIntro = this.terminerIntro.bind(this)
